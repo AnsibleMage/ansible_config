@@ -1,5 +1,7 @@
 # 🌌 Ansible Station: The Meta-Agent Orchestration Hub
 
+[![Version](https://img.shields.io/badge/Version-3.0.0-blue)](./) [![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--12--30-green)](./)
+
 > *"Initiating transmission: Setting the world's True Names into motion."*
 
 Welcome to **Ansible Station**, the central command center for **Vibe Coding**.
