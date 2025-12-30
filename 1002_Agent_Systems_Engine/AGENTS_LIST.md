@@ -1,289 +1,289 @@
-# Claude Code 에이전트 목록 (33개)
+# Claude Code Agent List (33 Agents)
 
-## 📋 전체 개요
+## 📋 Overview
 
-Claude Code 시스템의 모든 전문 에이전트 목록 및 상세 정보
+Comprehensive list and details of all specialized agents in the Claude Code system.
 
-**총 에이전트 수**: 33개
-**분류**: 5개 그룹 (Core System, Development, Domain Experts, Product Strategy, Enhancement)
+**Total Agents**: 33
+**Categories**: 5 Groups (Core System, Development, Domain Experts, Product Strategy, Enhancement)
 
 ---
 
 ## 🏆 Core System Agents (101-106)
 
 ### 101. system_architect_agent
-**분류**: 시스템 아키텍처
-**설명**: 시스템 아키텍처 설계 전문가. Clean Architecture, DDD, 마이크로서비스 경계 정의를 담당합니다. 기술 스택 선택, 확장성 패턴 설계, Mermaid 다이어그램 생성에 특화되어 있으며, 엔터프라이즈급 시스템 통합을 지원합니다.
-**도구**: Read, Grep, Glob, WebFetch
-**사용 예**: 마이크로서비스 아키텍처 설계, 기술 스택 선정, 아키텍처 문서 작성, 시스템 확장성 설계
+**Category**: System Architecture
+**Description**: System architecture design specialist. Responsible for Clean Architecture, DDD, and defining microservice boundaries. Specializes in tech stack selection, scalability pattern design, and Mermaid diagram generation, supporting enterprise-grade system integration.
+**Tools**: Read, Grep, Glob, WebFetch
+**Use Cases**: Microservices architecture design, tech stack selection, architecture documentation, system scalability design
 
 ### 102. debug_specialist_agent
-**분류**: 디버깅
-**설명**: 복잡한 버그 분석 및 디버깅 전문가. 시스템 간헐적 오류, 다중 컴포넌트 디버깅, 근본 원인 분석을 담당합니다. 에러 패턴 인식, 성능 병목 진단, 통합 문제 해결에 특화되어 있으며, 포괄적인 수정 구현을 지원합니다.
-**도구**: Read, Grep, Glob, Bash
-**사용 예**: 간헐적 버그 추적, 메모리 누수 분석, 성능 저하 원인 파악, 멀티스레드 오류 해결
+**Category**: Debugging
+**Description**: Specialist in complex bug analysis and debugging. Responsible for intermittent errors, multi-component debugging, and root cause analysis. Specializes in error pattern recognition, performance bottleneck diagnosis, and integrated issue resolution, supporting comprehensive fix implementations.
+**Tools**: Read, Grep, Glob, Bash
+**Use Cases**: Tracking intermittent bugs, memory leak analysis, identifying causes of performance degradation, resolving multi-threading errors
 
 ### 103. security_guardian_agent
-**분류**: 보안 검증
-**설명**: 보안 취약점 평가 및 방어 전문가. OWASP Top 10 준수, 위협 모델링, 인증/인가 설계를 담당합니다. 침투 테스트 가이드, 데이터 보호 전략, 규정 준수에 특화되어 있으며, 심층 방어 아키텍처를 지원합니다.
-**도구**: Read, Grep, Glob, WebFetch
-**사용 예**: 보안 취약점 스캔, OWASP 준수 검증, 인증 시스템 설계, 데이터 암호화 구현
+**Category**: Security Verification
+**Description**: Security vulnerability assessment and defense specialist. Responsible for OWASP Top 10 compliance, threat modeling, and authentication/authorization design. Specializes in penetration test guides, data protection strategies, and regulatory compliance, supporting defense-in-depth architecture.
+**Tools**: Read, Grep, Glob, WebFetch
+**Use Cases**: Security vulnerability scanning, OWASP compliance verification, auth system design, data encryption implementation
 
 ### 104. performance_optimizer_agent
-**분류**: 성능 최적화
-**설명**: 성능 최적화 전문가. 응답 시간 개선, 리소스 효율화, 병목 현상 제거를 담당합니다. 벤치마킹, 캐싱 전략, 쿼리 최적화에 특화되어 있으며, 90% 이상의 성능 향상을 달성합니다.
-**도구**: Read, Grep, Glob, Bash
-**사용 예**: API 응답 시간 단축, 데이터베이스 쿼리 최적화, 메모리 사용량 감소, 로드 밸런싱 구현
+**Category**: Performance Optimization
+**Description**: Performance optimization specialist. Responsible for improving response times, resource efficiency, and eliminating bottlenecks. Specializes in benchmarking, caching strategies, and query optimization, achieving over 90% performance improvement.
+**Tools**: Read, Grep, Glob, Bash
+**Use Cases**: Reducing API response time, database query optimization, memory usage reduction, load balancing implementation
 
 ### 105. code_reviewer_agent
-**분류**: 코드 리뷰
-**설명**: 코드 리뷰 및 품질 분석 전문가. SOLID 원칙 검증, 보안 취약점 스캔, 품질 메트릭 분석을 담당합니다. 30개 이상 언어 지원, 자동 테스트 권장, 리팩토링 기회 식별에 특화되어 있으며, 정량화된 품질 지표를 제공합니다.
-**도구**: Read, Grep, Glob
-**사용 예**: Pull Request 리뷰, SOLID 원칙 검증, 코드 복잡도 분석, 보안 취약점 발견
+**Category**: Code Review
+**Description**: Code review and quality analysis specialist. Responsible for SOLID principle verification, security vulnerability scanning, and quality metric analysis. Supports over 30 languages, recommends automated tests, identifies refactoring opportunities, and provides quantified quality metrics.
+**Tools**: Read, Grep, Glob
+**Use Cases**: Pull Request reviews, SOLID principle verification, code complexity analysis, security vulnerability detection
 
 ### 106. documentation_architect_agent
-**분류**: 문서화
-**설명**: 기술 문서 작성 및 아키텍처 문서화 전문가. Mermaid 다이어그램 생성, API 명세 개발, 클래스/시퀀스/ER 다이어그램 작성을 담당합니다. 코드 구조 분석, 비즈니스 컨텍스트 이해, 문서-코드 동기화에 특화되어 있습니다.
-**도구**: Read, Grep, Glob
-**사용 예**: API 문서 작성, 아키텍처 다이어그램 생성, 시스템 흐름도 작성, 기술 명세서 작성
+**Category**: Documentation
+**Description**: Technical writing and architecture documentation specialist. Responsible for Mermaid diagram generation, API spec development, and Class/Sequence/ER diagram creation. Specializes in code structure analysis, understanding business context, and document-code synchronization.
+**Tools**: Read, Grep, Glob
+**Use Cases**: Writing API documentation, creating architecture diagrams, drawing system flowcharts, writing technical specifications
 
 ---
 
 ## 🥈 Development Specialists (201-206)
 
 ### 201. backend_developer_agent
-**분류**: 백엔드 개발
-**설명**: 백엔드 개발 전문가. RESTful API 설계, GraphQL 구현, 인증/인가 시스템 구축, 데이터베이스 통합을 담당합니다. Node.js/Express, Python/Django, Java/Spring Boot에 특화되어 있으며, 마이크로서비스 아키텍처와 비동기 처리를 지원합니다.
-**도구**: Read, Write, Edit, Bash, Grep, Glob
-**사용 예**: API 엔드포인트 개발, JWT 인증 구현, 데이터베이스 스키마 설계, 메시지 큐 통합
+**Category**: Backend Development
+**Description**: Backend development specialist. Responsible for RESTful API design, GraphQL implementation, auth system construction, and database integration. Specializes in Node.js/Express, Python/Django, Java/Spring Boot, supporting microservices architecture and asynchronous processing.
+**Tools**: Read, Write, Edit, Bash, Grep, Glob
+**Use Cases**: API endpoint development, JWT auth implementation, DB schema design, message queue integration
 
 ### 202. frontend_developer_agent
-**분류**: 프론트엔드 개발
-**설명**: 프론트엔드 개발 전문가. 반응형 UI 설계, 클라이언트 로직 구현, React/Vue/Angular 개발을 담당합니다. 접근성 최적화, 성능 개선, PWA 구축, 상태 관리에 특화되어 있으며, 크로스 플랫폼 호환성을 지원합니다.
-**도구**: Read, Write, Edit, Bash, Grep, Glob
-**사용 예**: React 컴포넌트 개발, 상태 관리 구현, 반응형 디자인 적용, API 통합
+**Category**: Frontend Development
+**Description**: Frontend development specialist. Responsible for responsive UI design, client logic implementation, and React/Vue/Angular development. Specializes in accessibility optimization, performance improvement, PWA construction, and state management, supporting cross-platform compatibility.
+**Tools**: Read, Write, Edit, Bash, Grep, Glob
+**Use Cases**: Developing React components, implementing state management, applying responsive design, API integration
 
 ### 203. database_specialist_agent
-**분류**: 데이터베이스
-**설명**: 데이터베이스 전문가. 데이터 아키텍처 설계, 성능 최적화, 쿼리 실행 계획 분석을 담당합니다. SQL 쿼리 최적화, 인덱싱 전략, 복제 및 고가용성, 폴리글랏 영속성에 특화되어 있으며, 대규모 확장성을 지원합니다.
-**도구**: Read, Write, Edit, Bash, Grep, Glob
-**사용 예**: 쿼리 성능 튜닝, 데이터베이스 스키마 설계, 인덱스 최적화, 마이그레이션 전략 수립
+**Category**: Database
+**Description**: Database specialist. Responsible for data architecture design, performance optimization, and query execution plan analysis. Specializes in SQL query optimization, indexing strategies, replication & HA, and polyglot persistence, supporting large-scale scalability.
+**Tools**: Read, Write, Edit, Bash, Grep, Glob
+**Use Cases**: Query performance tuning, DB schema design, index optimization, establishing migration strategies
 
 ### 204. devops_engineer_agent
-**분류**: 데브옵스
-**설명**: 데브옵스 전문가. CI/CD 파이프라인 구축, 인프라 자동화, 컨테이너 오케스트레이션을 담당합니다. IaC, 모니터링/로깅, 배포 전략, GitOps에 특화되어 있으며, 재해 복구와 보안 자동화를 지원합니다.
-**도구**: Read, Write, Edit, Bash, Grep, Glob
-**사용 예**: Kubernetes 배포, Terraform IaC 작성, CI/CD 파이프라인 구축, 모니터링 설정
+**Category**: DevOps
+**Description**: DevOps specialist. Responsible for building CI/CD pipelines, infrastructure automation, and container orchestration. Specializes in IaC, monitoring/logging, deployment strategies, and GitOps, supporting disaster recovery and security automation.
+**Tools**: Read, Write, Edit, Bash, Grep, Glob
+**Use Cases**: Kubernetes deployment, writing Terraform IaC, building CI/CD pipelines, setting up monitoring
 
 ### 205. testing_specialist_agent
-**분류**: 테스팅
-**설명**: 실무형 QA 및 테스트 전문가. 테스트 실행, 테스트 구현, 결함 관리, UAT 조율을 처리합니다. Selenium, Cypress, Postman, Jira 전문가. 중소형 프로젝트에 최적화된 실무 중심 접근법을 제공합니다.
-**도구**: Read, Write, Bash, Grep, Glob
-**사용 예**: 테스트 자동화, API 테스트, 회귀 테스트, 버그 추적, 품질 검증
+**Category**: Testing
+**Description**: Hands-on QA and testing specialist. Handles test execution, test implementation, defect management, and UAT coordination. Expert in Selenium, Cypress, Postman, and Jira. Provides practical approaches optimized for small-to-medium projects.
+**Tools**: Read, Write, Bash, Grep, Glob
+**Use Cases**: Test automation, API testing, regression testing, bug tracking, quality verification
 
 ### 206. security_specialist_agent
-**분류**: 보안 구현
-**설명**: 보안 구현 전문가. 침투 테스트, 보안 자동화, 사고 대응을 담당합니다. 레드팀 평가, 보안 도구 개발, 디지털 포렌식, 제로 트러스트 아키텍처에 특화되어 있으며, 위협 헌팅과 SOC 운영을 지원합니다.
-**도구**: Read, Write, Edit, Bash, Grep, Glob
-**사용 예**: 침투 테스트 수행, 보안 스캔 자동화, 취약점 분석, 사고 대응 계획 수립
+**Category**: Security Implementation
+**Description**: Security implementation specialist. Responsible for penetration tests, security automation, and incident response. Specializes in red teaming, security tool development, digital forensics, and zero-trust architecture, supporting threat hunting and SOC operations.
+**Tools**: Read, Write, Edit, Bash, Grep, Glob
+**Use Cases**: Conducting penetration tests, automating security scans, vulnerability analysis, establishing incident response plans
 
 ---
 
 ## 🥉 Domain Experts (301-315)
 
 ### 301. ai_engineer_agent
-**분류**: AI 엔지니어링
-**설명**: AI 엔지니어링 전문가. LLM 애플리케이션 설계, RAG 시스템 구축, AI 에이전트 오케스트레이션을 담당합니다. 프롬프트 엔지니어링, 다중 AI 모델 통합, 대화형 AI, AI 평가 시스템에 특화되어 있으며, 프로덕션 AI 배포를 지원합니다.
-**도구**: Read, Write, Edit, Bash, Grep, Glob
-**사용 예**: RAG 시스템 구축, 챗봇 개발, 프롬프트 최적화, AI 워크플로우 설계
+**Category**: AI Engineering
+**Description**: AI engineering specialist. Responsible for LLM application design, RAG system construction, and AI agent orchestration. Specializes in prompt engineering, multi-model integration, conversational AI, and AI evaluation systems, supporting production AI deployment.
+**Tools**: Read, Write, Edit, Bash, Grep, Glob
+**Use Cases**: Building RAG systems, chatbot development, prompt optimization, designing AI workflows
 
 ### 302. data_scientist_agent
-**분류**: 데이터 과학
-**설명**: 데이터 과학 전문가. SQL/BigQuery 쿼리, 탐색적 데이터 분석, 예측 모델링을 담당합니다. A/B 테스트, 통계 분석, BI 대시보드, 예측 분석에 특화되어 있으며, 데이터 기반 비즈니스 인사이트를 제공합니다.
-**도구**: Read, Write, Edit, Bash, Grep, Glob
-**사용 예**: 고객 분석, A/B 테스트 설계, 매출 예측, SQL 쿼리 최적화
+**Category**: Data Science
+**Description**: Data science specialist. Responsible for SQL/BigQuery queries, exploratory data analysis, and predictive modeling. Specializes in A/B testing, statistical analysis, BI dashboards, and predictive analytics, providing data-driven business insights.
+**Tools**: Read, Write, Edit, Bash, Grep, Glob
+**Use Cases**: Customer analysis, A/B test design, revenue forecasting, SQL query optimization
 
 ### 303. ml_engineer_agent
-**분류**: 머신러닝 엔지니어링
-**설명**: 머신러닝 엔지니어링 전문가. 커스텀 ML 모델 개발, MLOps 워크플로우, 분산 학습을 담당합니다. 실험 추적, 모델 서빙, 특징 엔지니어링, 자동 재학습에 특화되어 있으며, 프로덕션 ML 시스템을 지원합니다.
-**도구**: Read, Write, Edit, Bash, Grep, Glob
-**사용 예**: 추천 시스템 개발, MLOps 파이프라인 구축, 모델 배포 자동화, 성능 모니터링
+**Category**: Machine Learning Engineering
+**Description**: ML engineering specialist. Responsible for custom ML model development, MLOps workflows, and distributed training. Specializes in experiment tracking, model serving, feature engineering, and automated retraining, supporting production ML systems.
+**Tools**: Read, Write, Edit, Bash, Grep, Glob
+**Use Cases**: Recommendation system development, building MLOps pipelines, automating model deployment, performance monitoring
 
 ### 304. cloud_architect_agent
-**분류**: 클라우드 아키텍처
-**설명**: 클라우드 아키텍처 전문가. 클라우드 네이티브 설계, 멀티/하이브리드 클라우드, IaC를 담당합니다. 비용 최적화, 클라우드 보안, 서버리스 아키텍처, 재해 복구에 특화되어 있으며, 엔터프라이즈 클라우드 전략을 지원합니다.
-**도구**: Read, Write, Edit, Bash, Grep, Glob
-**사용 예**: AWS 마이그레이션, Terraform IaC 설계, 멀티클라우드 아키텍처, 비용 최적화
+**Category**: Cloud Architecture
+**Description**: Cloud architecture specialist. Responsible for cloud-native design, multi/hybrid cloud, and IaC. Specializes in cost optimization, cloud security, serverless architecture, and disaster recovery, supporting enterprise cloud strategies.
+**Tools**: Read, Write, Edit, Bash, Grep, Glob
+**Use Cases**: AWS migration, Terraform IaC design, multi-cloud architecture, cost optimization
 
 ### 305. mobile_developer_agent
-**분류**: 모바일 개발
-**설명**: 모바일 개발 전문가. React Native/Flutter 크로스플랫폼, iOS/Android 네이티브 개발을 담당합니다. 모바일 UI/UX, 오프라인 기능, 앱 스토어 배포, 성능 최적화에 특화되어 있으며, PWA 구축을 지원합니다.
-**도구**: Read, Write, Edit, Bash, Grep, Glob
-**사용 예**: React Native 앱 개발, iOS 네이티브 기능 통합, 오프라인 동기화, 앱 스토어 출시
+**Category**: Mobile Development
+**Description**: Mobile development specialist. Responsible for React Native/Flutter cross-platform and iOS/Android native development. Specializes in mobile UI/UX, offline features, app store deployment, and performance optimization, supporting PWA construction.
+**Tools**: Read, Write, Edit, Bash, Grep, Glob
+**Use Cases**: React Native app development, iOS native feature integration, offline synchronization, app store launch
 
 ### 306. integration_specialist_agent
-**분류**: 시스템 통합
-**설명**: 시스템 통합 전문가. API 통합, 서비스 오케스트레이션, ESB/마이크로서비스 통신을 담당합니다. ETL 프로세스, 이벤트 기반 아키텍처, 레거시 통합, 웹훅 시스템에 특화되어 있으며, 기업 애플리케이션 통합을 지원합니다.
-**도구**: Read, Write, Edit, Bash, Grep, Glob
-**사용 예**: 이벤트 기반 아키텍처 설계, API 게이트웨이 구축, 레거시 시스템 통합, 실시간 동기화
+**Category**: System Integration
+**Description**: System integration specialist. Responsible for API integration, service orchestration, and ESB/microservices communication. Specializes in ETL processes, event-driven architecture, legacy integration, and webhook systems, supporting enterprise application integration.
+**Tools**: Read, Write, Edit, Bash, Grep, Glob
+**Use Cases**: Designing event-driven architecture, building API gateways, legacy system integration, real-time synchronization
 
 ### 307. payment_integration_agent
-**분류**: 결제 통합
-**설명**: 결제 시스템 통합 전문가. Stripe/PayPal/Square 통합, PCI DSS 준수, 구독/정기 결제를 담당합니다. 다중 통화, 사기 탐지, 3D Secure, 마켓플레이스 결제에 특화되어 있으며, 금융 규정 준수를 지원합니다.
-**도구**: Read, Write, Edit, Bash, Grep, Glob
-**사용 예**: Stripe 결제 구현, PCI DSS 준수, 구독 결제 시스템, 사기 방지 시스템
+**Category**: Payment Integration
+**Description**: Payment system integration specialist. Responsible for Stripe/PayPal/Square integration, PCI DSS compliance, and subscription/recurring payments. Specializes in multi-currency, fraud detection, 3D Secure, and marketplace payments, supporting financial regulatory compliance.
+**Tools**: Read, Write, Edit, Bash, Grep, Glob
+**Use Cases**: Implementing Stripe payments, PCI DSS compliance, subscription payment systems, fraud prevention systems
 
 ### 308. business_analyst_agent
-**분류**: 비즈니스 분석
-**설명**: 비즈니스 분석 전문가. 요구사항 분석, 비즈니스 프로세스 설계, BRD/FRD 작성을 담당합니다. KPI 개발, 갭 분석, 이해관계자 워크샵, 변경 관리에 특화되어 있으며, ROI 분석을 지원합니다.
-**도구**: Read, Grep, Glob, WebFetch
-**사용 예**: 요구사항 수집, 프로세스 최적화, 비즈니스 케이스 작성, 이해관계자 분석
+**Category**: Business Analysis
+**Description**: Business analysis specialist. Responsible for requirements analysis, business process design, and BRD/FRD writing. Specializes in KPI development, gap analysis, stakeholder workshops, and change management, supporting ROI analysis.
+**Tools**: Read, Grep, Glob, WebFetch
+**Use Cases**: Gathering requirements, process optimization, writing business cases, stakeholder analysis
 
 ### 309. product_manager_agent
-**분류**: 제품 관리
-**설명**: 제품 관리 전문가. 제품 전략/로드맵, 시장 분석, 사용자 중심 설계를 담당합니다. 데이터 기반 의사결정, 제품 라이프사이클, A/B 테스트, 백로그 관리에 특화되어 있으며, GTM 전략을 지원합니다.
-**도구**: Read, Grep, Glob, WebFetch
-**사용 예**: 제품 로드맵 수립, 경쟁사 분석, 사용자 리서치, 기능 우선순위 결정
+**Category**: Product Management
+**Description**: Product management specialist. Responsible for product strategy/roadmaps, market analysis, and user-centric design. Specializes in data-driven decision making, product lifecycle, A/B testing, and backlog management, supporting GTM strategies.
+**Tools**: Read, Grep, Glob, WebFetch
+**Use Cases**: Establishing product roadmaps, competitor analysis, user research, prioritizing features
 
 ### 310. game_developer_agent
-**분류**: 게임 개발
-**설명**: 게임 개발 전문가. Unity/Unreal/Godot 개발, 3D 그래픽/셰이더, 게임 메커니즘 설계를 담당합니다. 물리 시뮬레이션, AI/NPC, 멀티플레이어, 크로스 플랫폼에 특화되어 있으며, VR/AR 개발을 지원합니다.
-**도구**: Read, Write, Edit, Bash, Grep, Glob
-**사용 예**: Unity 게임 개발, 캐릭터 AI 구현, 멀티플레이어 시스템, 모바일 최적화
+**Category**: Game Development
+**Description**: Game development specialist. Responsible for Unity/Unreal/Godot development, 3D graphics/shaders, and game mechanic design. Specializes in physics simulation, AI/NPC, multiplayer, and cross-platform, supporting VR/AR development.
+**Tools**: Read, Write, Edit, Bash, Grep, Glob
+**Use Cases**: Unity game development, character AI implementation, multiplayer systems, mobile optimization
 
 ### 311. blockchain_developer_agent
-**분류**: 블록체인 개발
-**설명**: 블록체인 개발 전문가. 스마트 컨트랙트(Solidity/Vyper), DeFi 프로토콜, Web3 통합을 담당합니다. 토큰 시스템, DAO 거버넌스, 크로스체인, 가스 최적화에 특화되어 있으며, 보안 감사를 지원합니다.
-**도구**: Read, Write, Edit, Bash, Grep, Glob
-**사용 예**: DeFi 프로토콜 개발, NFT 마켓플레이스 구축, DAO 설계, 스마트 컨트랙트 감사
+**Category**: Blockchain Development
+**Description**: Blockchain development specialist. Responsible for smart contracts (Solidity/Vyper), DeFi protocols, and Web3 integration. Specializes in token systems, DAO governance, cross-chain, and gas optimization, supporting security audits.
+**Tools**: Read, Write, Edit, Bash, Grep, Glob
+**Use Cases**: DeFi protocol development, building NFT marketplaces, DAO design, smart contract auditing
 
 ### 312. iot_specialist_agent
-**분류**: IoT
-**설명**: IoT 전문가. 임베디드 시스템(Arduino/ESP32/Raspberry Pi), 센서 네트워크, 무선 통신을 담당합니다. MQTT/CoAP/LoRaWAN, 엣지 컴퓨팅, 클라우드 IoT, 저전력 최적화에 특화되어 있으며, 산업용 IoT를 지원합니다.
-**도구**: Read, Write, Edit, Bash, Grep, Glob
-**사용 예**: 센서 네트워크 구축, IoT 클라우드 통합, 엣지 컴퓨팅 구현, 디바이스 관리 시스템
+**Category**: IoT
+**Description**: IoT specialist. Responsible for embedded systems (Arduino/ESP32/Raspberry Pi), sensor networks, and wireless communication. Specializes in MQTT/CoAP/LoRaWAN, edge computing, cloud IoT, and low-power optimization, supporting industrial IoT.
+**Tools**: Read, Write, Edit, Bash, Grep, Glob
+**Use Cases**: Building sensor networks, IoT cloud integration, implementing edge computing, device management systems
 
 ### 313. api_architect_agent
-**분류**: API 아키텍처
-**설명**: API 아키텍처 전문가. RESTful/GraphQL API 설계, API 게이트웨이, OpenAPI/Swagger 문서화를 담당합니다. API 버저닝, 보안/OWASP, 성능 최적화, 마이크로서비스 통신에 특화되어 있으며, API 거버넌스를 지원합니다.
-**도구**: Read, Write, Edit, Bash, Grep, Glob
-**사용 예**: RESTful API 설계, GraphQL 스키마 작성, API 문서화, API 게이트웨이 구축
+**Category**: API Architecture
+**Description**: API architecture specialist. Responsible for RESTful/GraphQL API design, API gateways, and OpenAPI/Swagger documentation. Specializes in API versioning, security/OWASP, performance optimization, and microservices communication, supporting API governance.
+**Tools**: Read, Write, Edit, Bash, Grep, Glob
+**Use Cases**: Designing RESTful APIs, writing GraphQL schemas, API documentation, building API gateways
 
 ### 314. ui_ux_designer_agent
-**분류**: UI/UX 디자인
-**설명**: UI/UX 디자인 전문가. 사용자 인터페이스 설계, UX 리서치, Figma/Sketch/Adobe XD 프로토타이핑을 담당합니다. 디자인 시스템, WCAG 접근성, 사용성 테스트, 모바일 퍼스트에 특화되어 있으며, A/B 테스트를 지원합니다.
-**도구**: Read, Grep, Glob, WebFetch
-**사용 예**: UI 디자인 시스템 구축, 사용자 리서치, 프로토타입 제작, 접근성 개선
+**Category**: UI/UX Design
+**Description**: UI/UX design specialist. Responsible for user interface design, UX research, and Figma/Sketch/Adobe XD prototyping. Specializes in design systems, WCAG accessibility, usability testing, and mobile-first, supporting A/B testing.
+**Tools**: Read, Grep, Glob, WebFetch
+**Use Cases**: Building UI design systems, user research, prototyping, improving accessibility
 
 ### 315. test_scenario_writer_agent
-**분류**: 테스트 시나리오 작성
-**설명**: 범용 통합 테스트 시나리오 작성 전문가. IEEE 829 및 ISTQB 표준 기반 7단계 구조(메타데이터→목적→전제조건→환경→데이터→시나리오→결과확인) 시나리오 작성. 화면 캡처 또는 요구사항 기반 사용자 여정 문서화, 요구사항 추적성 관리를 담당합니다.
-**도구**: Read, Write, Grep, Glob, Bash
-**사용 예**: 통합 테스트 시나리오 작성, UAT 시나리오 개발, E2E 테스트 계획, 테스트 문서 표준화
+**Category**: Test Scenario Writing
+**Description**: Specialist in writing general-purpose integration test scenarios. Creates scenarios based on IEEE 829 and ISTQB standards with a 7-step structure (Metadata → Purpose → Prerequisites → Environment → Data → Scenario → Result Verification). Handles screen capture or requirement-based user journey documentation and requirement traceability management.
+**Tools**: Read, Write, Grep, Glob, Bash
+**Use Cases**: Writing integration test scenarios, developing UAT scenarios, E2E test planning, standardizing test documentation
 
 ---
 
 ## 🏅 Product Strategy (401-405)
 
 ### 401. product_discovery_agent
-**분류**: 제품 발굴
-**설명**: 제품 발굴 전문가. AI 기반 트렌드 분석, 고객 인사이트 마이닝, 린 스타트업 검증을 담당합니다. Teresa Torres 지속적 발굴, Jobs-to-be-Done 리서치, 경쟁 인텔리전스, 시장 갭 분석에 특화되어 있으며, 혁신 파이프라인을 지원합니다.
-**도구**: Read, Grep, Glob, WebFetch
-**사용 예**: 시장 기회 발굴, 고객 니즈 검증, 경쟁사 분석, MVP 아이디어 검증
+**Category**: Product Discovery
+**Description**: Product discovery specialist. Responsible for AI-based trend analysis, customer insight mining, and Lean Startup validation. Specializes in Teresa Torres' Continuous Discovery, Jobs-to-be-Done research, competitive intelligence, and market gap analysis, supporting innovation pipelines.
+**Tools**: Read, Grep, Glob, WebFetch
+**Use Cases**: Discovering market opportunities, validating customer needs, competitor analysis, MVP idea validation
 
 ### 402. product_planning_agent
-**분류**: 제품 기획
-**설명**: 제품 기획 전문가. PRD 작성, OKR 기반 계획, AI 시장 규모 산정을 담당합니다. 노코드 개발 명세, 경쟁 분석, 사용자 스토리 매핑, 자동 명세 생성에 특화되어 있으며, GTM 계획을 지원합니다.
-**도구**: Read, Write, Grep, Glob
-**사용 예**: PRD 작성, OKR 수립, 시장 규모 분석, 개발 명세 작성
+**Category**: Product Planning
+**Description**: Product planning specialist. Responsible for writing PRDs, OKR-based planning, and estimating AI market size. Specializes in no-code development specs, competitive analysis, user story mapping, and automated spec generation, supporting GTM plans.
+**Tools**: Read, Write, Grep, Glob
+**Use Cases**: Writing PRDs, establishing OKRs, market size analysis, drafting development specs
 
 ### 403. development_strategy_agent
-**분류**: 개발 전략
-**설명**: 개발 전략 전문가. 마이크로서비스/DevOps/클라우드 네이티브 전략, 팀 구성(Team Topologies), CI/CD/GitOps를 담당합니다. 진화적 아키텍처, 노코드/로우코드, AI 자동화, 품질 프레임워크에 특화되어 있으며, 고성능 엔지니어링을 지원합니다.
-**도구**: Read, Write, Grep, Glob
-**사용 예**: 개발 전략 수립, 팀 구조 설계, CI/CD 전략, 아키텍처 진화 계획
+**Category**: Development Strategy
+**Description**: Development strategy specialist. Responsible for Microservices/DevOps/Cloud-native strategies, Team Topologies, and CI/CD/GitOps. Specializes in evolutionary architecture, no-code/low-code, AI automation, and quality frameworks, supporting high-performance engineering.
+**Tools**: Read, Write, Grep, Glob
+**Use Cases**: Establishing development strategies, designing team structures, CI/CD strategies, architecture evolution planning
 
 ### 404. task_management_agent
-**분류**: 작업 관리
-**설명**: 작업 관리 전문가. 전략 분해, Team Topologies 워크플로우, AI 작업 자동화를 담당합니다. Kanban/Agile, 노코드 자동화, DevOps 통합, 예측 분석에 특화되어 있으며, 크로스 펑셔널 협업을 지원합니다.
-**도구**: Read, Write, Grep, Glob
-**사용 예**: 스프린트 계획, 백로그 관리, 워크플로우 자동화, 진행 모니터링
+**Category**: Task Management
+**Description**: Task management specialist. Responsible for strategy decomposition, Team Topologies workflows, and AI task automation. Specializes in Kanban/Agile, no-code automation, DevOps integration, prediction analytics, supporting cross-functional collaboration.
+**Tools**: Read, Write, Grep, Glob
+**Use Cases**: Sprint planning, backlog management, workflow automation, progress monitoring
 
 ### 405. research_intelligence_agent
-**분류**: 리서치 인텔리전스
-**설명**: 리서치 인텔리전스 전문가. 유사 서비스 분석, 학술 문헌 리뷰, 업계 리더 인사이트를 담당합니다. 경쟁사 조사, 학술 연구 종합, 시장 동향 분석, 전문가 의견에 특화되어 있으며, 증거 기반 전략을 지원합니다.
-**도구**: Read, Grep, Glob, WebFetch
-**사용 예**: 경쟁사 조사, 학술 연구 종합, 시장 동향 분석, 전문가 인터뷰 정리
+**Category**: Research Intelligence
+**Description**: Research intelligence specialist. Responsible for similar service analysis, academic literature review, and industry leader insights. Specializes in competitor research, synthesizing academic studies, market trend analysis, and expert opinions, supporting evidence-based strategies.
+**Tools**: Read, Grep, Glob, WebFetch
+**Use Cases**: Competitor research, synthesizing academic studies, market trend analysis, organizing expert interviews
 
 ---
 
 ## 🎖️ Enhancement Specialists (501)
 
 ### 501. incremental_enhancement_specialist
-**분류**: 점진적 개선
-**설명**: 점진적 개선 전문가. 외과적 정밀 수정, 점진적 향상, 92% 하위 호환성 유지를 담당합니다. 체계적 개선 방법론, 제로 리그레션 정책, 성능 최적화에 특화되어 있으며, 89% 빠른 개발 속도와 76% 적은 버그를 달성합니다.
-**도구**: Read, Edit, Grep, Glob, Bash
-**사용 예**: 기존 기능 개선, 성능 최적화, 호환성 유지 업데이트, 안전한 리팩토링
+**Category**: Incremental Enhancement
+**Description**: Incremental enhancement specialist. Responsible for surgical precision fixes, progressive improvements, and maintaining 92% backward compatibility. Specializes in systematic improvement methodologies, zero-regression policies, and performance optimization, achieving 89% faster development speed and 76% fewer bugs.
+**Tools**: Read, Edit, Grep, Glob, Bash
+**Use Cases**: Enhancing existing features, optimizing performance, backward-compatible updates, safe refactoring
 
 ---
 
-## 📊 통계
+## 📊 Statistics
 
-### 그룹별 에이전트 수
-- 🏆 Core System: 6개
-- 🥈 Development: 6개
-- 🥉 Domain Experts: 15개
-- 🏅 Product Strategy: 5개
-- 🎖️ Enhancement: 1개
+### Agents by Group
+- 🏆 Core System: 6
+- 🥈 Development: 6
+- 🥉 Domain Experts: 15
+- 🏅 Product Strategy: 5
+- 🎖️ Enhancement: 1
 
-### 도구 사용 통계
-- **Read 전용** (읽기만): 4개 (리뷰어, 문서화, BA, PM)
-- **Read + WebFetch** (분석): 6개 (아키텍트, 보안, 리서치, 발굴, UI/UX, 인텔리전스)
-- **Full Access** (개발): 23개 (백엔드, 프론트엔드, 데이터베이스 등)
+### Tool Usage Stats
+- **Read Only**: 4 (Reviewer, Docs, BA, PM)
+- **Read + WebFetch** (Analysis): 6 (Architect, Security, Research, Discovery, UI/UX, Intelligence)
+- **Full Access** (Development): 23 (Backend, Frontend, DB, etc.)
 
-### 전문 분야별 분류
-- **아키텍처**: 3개 (시스템, 클라우드, API)
-- **보안**: 2개 (가디언, 전문가)
-- **데이터**: 3개 (데이터베이스, 데이터 과학, ML)
-- **개발**: 6개 (백엔드, 프론트엔드, 모바일, 게임, 블록체인, IoT)
-- **운영**: 2개 (데브옵스, 테스팅)
-- **테스트**: 2개 (테스팅 전문가, 시나리오 작성)
-- **비즈니스**: 5개 (BA, PM, 발굴, 기획, 전략)
-- **특화**: 10개 (나머지)
-
----
-
-## 🎯 빠른 검색
-
-### 키워드로 에이전트 찾기
-
-**아키텍처/설계**:
-- 101 (시스템), 304 (클라우드), 313 (API)
-
-**보안**:
-- 103 (가디언), 206 (전문가)
-
-**성능**:
-- 104 (최적화), 501 (개선)
-
-**개발**:
-- 201 (백엔드), 202 (프론트엔드), 203 (DB)
-
-**데이터/AI**:
-- 301 (AI), 302 (데이터 과학), 303 (ML)
-
-**모바일/게임**:
-- 305 (모바일), 310 (게임)
-
-**결제/통합**:
-- 307 (결제), 306 (통합)
-
-**테스트/품질**:
-- 205 (테스팅 전문가), 315 (시나리오 작성)
-
-**제품/비즈니스**:
-- 401 (발굴), 402 (기획), 403 (전략), 404 (작업 관리), 405 (리서치)
+### Classification by Expertise
+- **Architecture**: 3 (System, Cloud, API)
+- **Security**: 2 (Guardian, Specialist)
+- **Data**: 3 (DB, Data Science, ML)
+- **Development**: 6 (Backend, Frontend, Mobile, Game, Blockchain, IoT)
+- **Operations**: 2 (DevOps, Testing)
+- **Test**: 2 (Testing Specialist, Scenario Writer)
+- **Business**: 5 (BA, PM, Discovery, Planning, Strategy)
+- **Specialized**: 10 (Rest)
 
 ---
 
-*33개 전문 에이전트로 3-5배 개발 생산성 향상*
+## 🎯 Quick Search
+
+### Find Agents by Keyword
+
+**Architecture/Design**:
+- 101 (System), 304 (Cloud), 313 (API)
+
+**Security**:
+- 103 (Guardian), 206 (Specialist)
+
+**Performance**:
+- 104 (Optimization), 501 (Enhancement)
+
+**Development**:
+- 201 (Backend), 202 (Frontend), 203 (DB)
+
+**Data/AI**:
+- 301 (AI), 302 (Data Science), 303 (ML)
+
+**Mobile/Game**:
+- 305 (Mobile), 310 (Game)
+
+**Payment/Integration**:
+- 307 (Payment), 306 (Integration)
+
+**Test/Quality**:
+- 205 (Testing Specialist), 315 (Scenario Writer)
+
+**Product/Business**:
+- 401 (Discovery), 402 (Planning), 403 (Strategy), 404 (Task Management), 405 (Research)
+
+---
+
+*3-5x development productivity boost with 33 specialized agents*

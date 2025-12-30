@@ -31,8 +31,8 @@ Gemini Antigravity는 'Workflow'와 'Role-playing' 능력을 통해 이와 매�
 ### 대응 모델
 | Claude Code 요소 | Gemini Antigravity 대응 요소 | 적용 방법 |
 | :--- | :--- | :--- |
-| **Agent Definition** | **Persona Artifacts** | `AGENTS_LIST.md`의 항목을 개별 `.md` 파일로 분리하여 `.agent/personas/`에 저장 |
-| **Invocation** | **Workflows / Prompts** | `.agent/workflows/`에 특정 페르소나를 로드하는 워크플로우 생성 |
+| **Agent Definition** | **Persona Artifacts** | `AGENTS_LIST.md`의 항목을 개별 `.md` 파일로 분리하여 `~/.gemini/antigravity/personas/`에 저장 |
+| **Invocation** | **Workflows / Prompts** | `~/.gemini/antigravity/workflows/`에 특정 페르소나를 로드하는 워크플로우 생성 |
 | **Context Isolation** | **Task Boundary** | `task_boundary` 도구의 `TaskName`을 변경하여 모드 전환을 명시 (예: `TaskName: [Code Reviewer] Reviewing...`) |
 | **Tools** | **Tool Filtering** | (시스템 레벨) 프롬프트에서 사용할 도구를 지시하거나 워크플로우에 명시 |
 
@@ -45,9 +45,9 @@ Gemini Antigravity는 'Workflow'와 'Role-playing' 능력을 통해 이와 매�
 ### 단계 1: 페르소나 파일 모듈화 (Modularization)
 `AGENTS_LIST.md`는 카탈로그로는 훌륭하지만, AI가 즉시 로드하기엔 너무 깁니다. 자주 사용하는 에이전트부터 개별 파일로 만듭니다.
 
-**추천 경로**: `.agent/personas/<ID>_<Name>.md`
+**추천 경로**: `~/.gemini/antigravity/personas/<ID>_<Name>.md`
 
-**예시 파일**: `.agent/personas/105_code_reviewer.md`
+**예시 파일**: `~/.gemini/antigravity/personas/105_code_reviewer.md`
 ```markdown
 # Agent: 105. code_reviewer_agent
 ## Identity
@@ -69,13 +69,13 @@ Gemini Antigravity는 'Workflow'와 'Role-playing' 능력을 통해 이와 매�
 ### 단계 2: 활성화 워크플로우 생성 (Activation Workflow)
 에이전트를 불러오는 워크플로우를 만듭니다.
 
-**파일**: `.agent/workflows/activate_agent.md`
+**파일**: `~/.gemini/antigravity/workflows/activate_agent.md`
 ```markdown
 ---
 description: Activate a specific sub-agent persona
 ---
 1. User specifies Agent ID or Name.
-2. Agent reads `.agent/personas/[ID]_[Name].md`.
+2. Agent reads `~/.gemini/antigravity/personas/[ID]_[Name].md`.
 3. Agent calls `task_boundary` setting `TaskName` to `[Agent Name] Active`.
 4. Agent acknowledges identity and awaits input.
 ```
@@ -90,7 +90,7 @@ Antigravity의 `task_boundary` 도구는 UI 상에서 작업의 "맥락"을 보�
 
 사용자가 **"보안 가디언 에이전트로 현재 파일 점검해줘"**라고 요청했을 때:
 
-1.  **Antigravity**: `.agent/personas/103_security_guardian_agent.md` 파일을 읽음.
+1.  **Antigravity**: `~/.gemini/antigravity/personas/103_security_guardian_agent.md` 파일을 읽음.
 2.  **Antigravity**: `task_boundary(TaskName="🛡️ Security Guardian", TaskStatus="Initializing security scan...")` 호출.
 3.  **Antigravity (페르소나 장착)**: "보안 가디언 에이전트(103)입니다. OWASP Top 10 기준으로 현재 파일을 스캔하겠습니다..."
 4.  **작업 수행**: `checklist.md` 기반 점검.
