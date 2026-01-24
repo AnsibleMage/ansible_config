@@ -48,6 +48,20 @@ This layer upgrades the AI's cognitive process. It introduces **"Cognitive Agent
     *   **5-Step Thinking Process**: A mandatory protocol for solving complex problems.
 *   **Use Case**: Strategic planning, solving undefined problems, creative ideation, and R&D.
 
+### 4. Generative Orchestrator: Antigravity (`1004`)
+📂 **[1004_Skill_Agent_Systems_antigravity](./1004_Skill_Agent_Systems_antigravity)**
+
+> *The Orchestrator.* Defining "How I Evolve".
+
+This layer implements the **Dynamic Chain System**. It is a proactive agent that perceives context using linguistic analysis (`translation-specialist`), plans its own workflows (DevChain, ThinkChain), and manages a dedicated memory system.
+*   **Concept**: Dynamic Orchestration & Proactivity (Evolution-centric)
+*   **Key Components**:
+    *   **Context-First Perception**: 4-Layer Linguistic Analysis (Lexical/Syntactic/Discourse/Pragmatic).
+    *   **Dynamic Chains**: Real-time assembly of Sequential/Parallel/Hybrid skills.
+    *   **Active Memory**: Automated `context_log.json` and checkpoints.
+*   **Use Case**: **(Next-Gen Standard)** Autonomous, end-to-end task resolution with self-correction.
+
+
 ---
 
 ## 🧩 Skill Modules

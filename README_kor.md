@@ -48,6 +48,20 @@
     *   **5-Step Thinking Process**: 복잡한 문제 해결을 위한 필수 프로토콜.
 *   **사용 사례**: 전략 기획, 정의되지 않은 문제 해결, 창의적 아이디어 도출, R&D.
 
+### 4. 생성형 오케스트레이터: 안티그래비티 (`1004`)
+📂 **[1004_Skill_Agent_Systems_antigravity](./1004_Skill_Agent_Systems_antigravity)**
+
+> *지휘자(The Orchestrator).* "어떻게 진화하는가"를 정의합니다.
+
+이 레이어는 **동적 체인 시스템(Dynamic Chain System)**을 구현합니다. 언어학적 분석(`translation-specialist`)을 통해 문맥을 인지하고, 스스로 워크플로우(DevChain, ThinkChain)를 계획하며, 전용 기억 시스템을 관리하는 선제적 에이전트입니다.
+*   **개념**: 동적 오케스트레이션 & 선제성 (Evolution-centric)
+*   **핵심 요소**:
+    *   **문맥 우선 인지**: 4계층 언어 분석 (어휘/통사/담화/화용).
+    *   **동적 체인**: 순차/병렬/혼합 스킬의 실시간 조립.
+    *   **능동적 기억**: 자동화된 `context_log.json` 및 체크포인트.
+*   **사용 사례**: **(차세대 표준)** 자가 수정이 포함된 자율적 엔드-투-엔드 과업 해결.
+
+
 ---
 
 ## 🧩 스킬 모듈 (Skill Modules)
