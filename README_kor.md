@@ -67,7 +67,19 @@
 
 ---
 
-## 🧬 진화 트랙 (Evolution Track)
+## � 개발 방법론 (Dev Methodology)
+
+**"AI-Native 프로토콜"**
+인공지능 시대의 소프트웨어 개발을 위한 표준 운영 절차(SOP)와 연구 아카이브입니다.
+
+### **[7001_Dev Methodology](./7001_Dev%20Methodology)**
+인간의 의도와 AI의 실행력 간의 시너지를 극대화하기 위해 설계된 포괄적 프레임워크입니다.
+*   **[100_TDD](./7001_Dev%20Methodology/100_TDD)**: "안전망(The Safety Net)" - AI 통제 매커니즘으로서의 TDD 심층 연구.
+*   **[200_CJ_AI_Dev_Methodology](./7001_Dev%20Methodology/200_CJ_AI_Dev%20Methodology)**: "운영 체제(The Operating System)" - 실행 가능한 v2.0 프로세스 (검증 중심 개발).
+
+---
+
+## �🧬 진화 트랙 (Evolution Track)
 
 ### **[8001_Gemini_Evolution](./8001_Gemini_Evolution)**
 **"프로젝트 진화 (Project Evolution)"**

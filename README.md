@@ -67,6 +67,18 @@ A context-aware translation agent based on academic theories (Nida, ISO 17100).
 
 ---
 
+## 🧭 Dev Methodology
+
+**"The AI-Native Protocols"**
+Standard Operating Procedures (SOP) and Research Archives for software development in the era of Artificial Intelligence.
+
+### **[7001_Dev Methodology](./7001_Dev%20Methodology)**
+A comprehensive framework designed to maximize the synergy between Human Intent and AI Execution.
+*   **[100_TDD](./7001_Dev%20Methodology/100_TDD)**: "The Safety Net" - Deep research on TDD as the essential control mechanism for AI.
+*   **[200_CJ_AI_Dev_Methodology](./7001_Dev%20Methodology/200_CJ_AI_Dev%20Methodology)**: "The Operating System" - Actionable v2.0 process (Verification-Centric Development).
+
+---
+
 ## 🧬 Evolution Track
 
 ### **[8001_Gemini_Evolution](./8001_Gemini_Evolution)**
