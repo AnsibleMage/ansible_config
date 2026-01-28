@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<!--
+    Mirror Meadow (거울 초원)
+    Algorithmic art exploring reflection, inversion, and organic emergence
+    Based on: puppies in meadows, mirror symmetry, playful movement
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirror Meadow - Generative Art</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Anthropic Brand Colors */
+        :root {
+            --anthropic-dark: #141413;
+            --anthropic-light: #faf9f5;
+            --anthropic-mid-gray: #b0aea5;
+            --anthropic-light-gray: #e8e6dc;
+            --anthropic-orange: #d97757;
+            --anthropic-blue: #6a9bcc;
+            --anthropic-green: #788c5d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--anthropic-light) 0%, #f5f3ee 100%);
+            min-height: 100vh;
+            color: var(--anthropic-dark);
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 320px;
+            flex-shrink: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(20, 20, 19, 0.1);
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .sidebar h1 {
+            font-family: 'Lora', serif;
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--anthropic-dark);
+            margin-bottom: 8px;
+        }
+
+        .sidebar .subtitle {
+            color: var(--anthropic-mid-gray);
+            font-size: 14px;
+            margin-bottom: 32px;
+            line-height: 1.4;
+        }
+
+        /* Control Sections */
+        .control-section {
+            margin-bottom: 32px;
+        }
+
+        .control-section h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--anthropic-dark);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .control-section h3::before {
+            content: '•';
+            color: var(--anthropic-orange);
+            font-weight: bold;
+        }
+
+        /* Seed Controls */
+        .seed-input {
+            width: 100%;
+            background: var(--anthropic-light);
+            padding: 12px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin-bottom: 12px;
+            border: 1px solid var(--anthropic-light-gray);
+            text-align: center;
+        }
+
+        .seed-input:focus {
+            outline: none;
+            border-color: var(--anthropic-orange);
+            box-shadow: 0 0 0 2px rgba(217, 119, 87, 0.1);
+            background: white;
+        }
+
+        .seed-controls {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .regen-button {
+            margin-bottom: 0;
+        }
+
+        /* Parameter Controls */
+        .control-group {
+            margin-bottom: 20px;
+        }
+
+        .control-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--anthropic-dark);
+            margin-bottom: 8px;
+        }
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .slider-container input[type="range"] {
+            flex: 1;
+            height: 4px;
+            background: var(--anthropic-light-gray);
+            border-radius: 2px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .slider-container input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            background: var(--anthropic-orange);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .slider-container input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+            background: #c86641;
+        }
+
+        .slider-container input[type="range"]::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            background: var(--anthropic-orange);
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .value-display {
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            color: var(--anthropic-mid-gray);
+            min-width: 60px;
+            text-align: right;
+        }
+
+        /* Buttons */
+        .button {
+            background: var(--anthropic-orange);
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 100%;
+        }
+
+        .button:hover {
+            background: #c86641;
+            transform: translateY(-1px);
+        }
+
+        .button:active {
+            transform: translateY(0);
+        }
+
+        .button.secondary {
+            background: var(--anthropic-blue);
+        }
+
+        .button.secondary:hover {
+            background: #5a8bb8;
+        }
+
+        .button.tertiary {
+            background: var(--anthropic-green);
+        }
+
+        .button.tertiary:hover {
+            background: #6b7b52;
+        }
+
+        .button-row {
+            display: flex;
+            gap: 8px;
+        }
+
+        .button-row .button {
+            flex: 1;
+        }
+
+        /* Canvas Area */
+        .canvas-area {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 0;
+        }
+
+        #canvas-container {
+            width: 100%;
+            max-width: 1000px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(20, 20, 19, 0.1);
+            background: white;
+        }
+
+        #canvas-container canvas {
+            display: block;
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        /* Loading State */
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: var(--anthropic-mid-gray);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+
+            .canvas-area {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Control Sidebar -->
+        <div class="sidebar">
+            <h1>Mirror Meadow</h1>
+            <div class="subtitle">거울 초원 - Algorithmic art exploring reflection and organic emergence</div>
+
+            <!-- Seed Section -->
+            <div class="control-section">
+                <h3>Seed</h3>
+                <input type="number" id="seed-input" class="seed-input" value="42" onchange="updateSeed()">
+                <div class="seed-controls">
+                    <button class="button secondary" onclick="previousSeed()">← Prev</button>
+                    <button class="button secondary" onclick="nextSeed()">Next →</button>
+                </div>
+                <button class="button tertiary regen-button" onclick="randomSeedAndUpdate()">↻ Random</button>
+            </div>
+
+            <!-- Parameters Section -->
+            <div class="control-section">
+                <h3>Parameters</h3>
+                
+                <div class="control-group">
+                    <label>Particle Count</label>
+                    <div class="slider-container">
+                        <input type="range" id="particleCount" min="500" max="3000" step="100" value="1500" oninput="updateParam('particleCount', this.value)">
+                        <span class="value-display" id="particleCount-value">1500</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Bounce Energy</label>
+                    <div class="slider-container">
+                        <input type="range" id="bounceEnergy" min="0.5" max="3.0" step="0.1" value="1.5" oninput="updateParam('bounceEnergy', this.value)">
+                        <span class="value-display" id="bounceEnergy-value">1.5</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Noise Scale</label>
+                    <div class="slider-container">
+                        <input type="range" id="noiseScale" min="0.001" max="0.01" step="0.001" value="0.004" oninput="updateParam('noiseScale', this.value)">
+                        <span class="value-display" id="noiseScale-value">0.004</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Trail Fade</label>
+                    <div class="slider-container">
+                        <input type="range" id="trailFade" min="5" max="50" step="5" value="20" oninput="updateParam('trailFade', this.value)">
+                        <span class="value-display" id="trailFade-value">20</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Mirror Axis</label>
+                    <div class="slider-container">
+                        <input type="range" id="mirrorAxis" min="0.3" max="0.7" step="0.05" value="0.5" oninput="updateParam('mirrorAxis', this.value)">
+                        <span class="value-display" id="mirrorAxis-value">0.50</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actions Section -->
+            <div class="control-section">
+                <h3>Actions</h3>
+                <div class="button-row">
+                    <button class="button" onclick="resetParameters()">Reset</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Canvas Area -->
+        <div class="canvas-area">
+            <div id="canvas-container">
+                <div class="loading">Initializing Mirror Meadow...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Parameters
+        let params = {
+            seed: 42,
+            particleCount: 1500,
+            bounceEnergy: 1.5,
+            noiseScale: 0.004,
+            trailFade: 20,
+            mirrorAxis: 0.5
+        };
+
+        let defaultParams = {...params};
+
+        // Particle system
+        let particles = [];
+        let voronoiCells = [];
+
+        function setup() {
+            let canvas = createCanvas(1200, 1200);
+            canvas.parent('canvas-container');
+            
+            initializeSystem();
+            
+            document.querySelector('.loading').style.display = 'none';
+        }
+
+        function initializeSystem() {
+            randomSeed(params.seed);
+            noiseSeed(params.seed);
+
+            particles = [];
+            voronoiCells = [];
+            
+            // Create Voronoi cells for meadow structure
+            let cellCount = 20;
+            for (let i = 0; i < cellCount; i++) {
+                voronoiCells.push({
+                    x: random(width),
+                    y: random(height),
+                    hue: random(60, 120), // Green-yellow range
+                    brightness: random(200, 240)
+                });
+            }
+
+            // Create particles
+            for (let i = 0; i < params.particleCount; i++) {
+                particles.push(new Particle());
+            }
+
+            background(250, 249, 245);
+        }
+
+        function draw() {
+            // Subtle trail fade
+            fill(250, 249, 245, params.trailFade);
+            noStroke();
+            rect(0, 0, width, height);
+
+            // Draw Voronoi background (very subtle)
+            drawVoronoiBackground();
+
+            // Update and draw particles
+            for (let p of particles) {
+                p.update();
+                p.display();
+                
+                // Draw mirrored particle
+                p.displayMirror();
+            }
+        }
+
+        function drawVoronoiBackground() {
+            noStroke();
+            for (let x = 0; x < width; x += 20) {
+                for (let y = 0; y < height; y += 20) {
+                    let closest = voronoiCells[0];
+                    let minDist = dist(x, y, closest.x, closest.y);
+                    
+                    for (let cell of voronoiCells) {
+                        let d = dist(x, y, cell.x, cell.y);
+                        if (d < minDist) {
+                            minDist = d;
+                            closest = cell;
+                        }
+                    }
+                    
+                    fill(closest.hue, 30, closest.brightness, 10);
+                    rect(x, y, 20, 20);
+                }
+            }
+        }
+
+        class Particle {
+            constructor() {
+                this.pos = createVector(random(width * 0.1, width * params.mirrorAxis), random(height));
+                this.vel = createVector(random(-1, 1), random(-2, 0));
+                this.acc = createVector(0, 0);
+                this.maxSpeed = 3;
+                this.hue = random(60, 120);
+                this.saturation = random(40, 80);
+                this.brightness = random(180, 240);
+                this.size = random(2, 6);
+                this.bounceCount = 0;
+            }
+
+            update() {
+                // Apply noise-based force
+                let noiseForce = createVector(
+                    noise(this.pos.x * params.noiseScale, this.pos.y * params.noiseScale, frameCount * 0.01) * 2 - 1,
+                    noise(this.pos.x * params.noiseScale + 1000, this.pos.y * params.noiseScale, frameCount * 0.01) * 2 - 1
+                );
+                noiseForce.mult(0.1);
+                this.acc.add(noiseForce);
+
+                // Gravity
+                this.acc.add(createVector(0, 0.05));
+
+                // Update velocity and position
+                this.vel.add(this.acc);
+                this.vel.limit(this.maxSpeed);
+                this.pos.add(this.vel);
+                this.acc.mult(0);
+
+                // Bounce off boundaries (playful puppy energy)
+                if (this.pos.y > height) {
+                    this.pos.y = height;
+                    this.vel.y *= -params.bounceEnergy;
+                    this.bounceCount++;
+                    
+                    // Add horizontal bounce for playfulness
+                    this.vel.x += random(-1, 1);
+                }
+
+                if (this.pos.x < 0 || this.pos.x > width * params.mirrorAxis) {
+                    this.vel.x *= -0.8;
+                    this.pos.x = constrain(this.pos.x, 0, width * params.mirrorAxis);
+                }
+
+                // Reset if particle gets too old
+                if (this.bounceCount > 10 || this.pos.y < -50) {
+                    this.pos = createVector(random(width * 0.1, width * params.mirrorAxis), random(height * 0.5, height));
+                    this.vel = createVector(random(-1, 1), random(-2, 0));
+                    this.bounceCount = 0;
+                }
+            }
+
+            display() {
+                // Color based on velocity
+                let speed = this.vel.mag();
+                let alpha = map(speed, 0, this.maxSpeed, 50, 200);
+                
+                colorMode(HSB);
+                fill(this.hue, this.saturation, this.brightness, alpha);
+                noStroke();
+                circle(this.pos.x, this.pos.y, this.size);
+                colorMode(RGB);
+            }
+
+            displayMirror() {
+                // Mirror across vertical axis
+                let mirrorX = width - this.pos.x + (width * params.mirrorAxis - width/2) * 2;
+                
+                // Inverted color for mirror
+                let speed = this.vel.mag();
+                let alpha = map(speed, 0, this.maxSpeed, 50, 200);
+                
+                colorMode(HSB);
+                // Color inversion: shift hue by 180 degrees
+                let invertedHue = (this.hue + 180) % 360;
+                fill(invertedHue, this.saturation, this.brightness, alpha);
+                noStroke();
+                circle(mirrorX, this.pos.y, this.size);
+                colorMode(RGB);
+            }
+        }
+
+        // UI Control Handlers
+        function updateParam(paramName, value) {
+            params[paramName] = parseFloat(value);
+            document.getElementById(paramName + '-value').textContent = 
+                paramName === 'mirrorAxis' ? value : Math.round(value * 100) / 100;
+            
+            if (paramName === 'particleCount') {
+                initializeSystem();
+            }
+        }
+
+        // Seed Control Functions
+        function updateSeedDisplay() {
+            document.getElementById('seed-input').value = params.seed;
+        }
+
+        function updateSeed() {
+            let input = document.getElementById('seed-input');
+            let newSeed = parseInt(input.value);
+            if (newSeed && newSeed > 0) {
+                params.seed = newSeed;
+                initializeSystem();
+            } else {
+                updateSeedDisplay();
+            }
+        }
+
+        function previousSeed() {
+            params.seed = Math.max(1, params.seed - 1);
+            updateSeedDisplay();
+            initializeSystem();
+        }
+
+        function nextSeed() {
+            params.seed = params.seed + 1;
+            updateSeedDisplay();
+            initializeSystem();
+        }
+
+        function randomSeedAndUpdate() {
+            params.seed = Math.floor(Math.random() * 999999) + 1;
+            updateSeedDisplay();
+            initializeSystem();
+        }
+
+        function resetParameters() {
+            params = {...defaultParams};
+            
+            document.getElementById('particleCount').value = params.particleCount;
+            document.getElementById('particleCount-value').textContent = params.particleCount;
+            document.getElementById('bounceEnergy').value = params.bounceEnergy;
+            document.getElementById('bounceEnergy-value').textContent = params.bounceEnergy;
+            document.getElementById('noiseScale').value = params.noiseScale;
+            document.getElementById('noiseScale-value').textContent = params.noiseScale;
+            document.getElementById('trailFade').value = params.trailFade;
+            document.getElementById('trailFade-value').textContent = params.trailFade;
+            document.getElementById('mirrorAxis').value = params.mirrorAxis;
+            document.getElementById('mirrorAxis-value').textContent = params.mirrorAxis.toFixed(2);
+            
+            updateSeedDisplay();
+            initializeSystem();
+        }
+
+        window.addEventListener('load', function() {
+            updateSeedDisplay();
+        });
+    </script>
+</body>
+</html>
