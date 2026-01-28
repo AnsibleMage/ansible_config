@@ -1,6 +1,6 @@
 # 🌌 Ansible Station: The Meta-Agent Orchestration Hub
 
-[![Version](https://img.shields.io/badge/Version-3.0.0-blue)](./) [![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--12--30-green)](./)
+[![Version](https://img.shields.io/badge/Version-4.0.0-blue)](./) [![Last Updated](https://img.shields.io/badge/Last%20Updated-2026--01--28-green)](./)
 
 > *"Initiating transmission: Setting the world's True Names into motion."*
 
@@ -9,9 +9,9 @@ This repository houses the global configuration files, skill sets, and evolution
 
 ---
 
-## 🏛️ Core Architecture: The 3 Pillars
+## 🏛️ Core Architecture: The 4 Pillars
 
-This repository is structured into three evolutionary stages of Agent Systems, providing a complete framework from basic roles to deep cognitive thinking.
+This repository is structured into four evolutionary stages of Agent Systems, culminating in the **Antigravity V4.0** system.
 
 ### 1. Foundation: Basic Roles (`1001`)
 📂 **[1001_Agent_Systems_Basic](./1001_Agent_Systems_Basic)**
@@ -30,10 +30,7 @@ This layer establishes the fundamental identity of the AI. It transforms a gener
 
 This is the **Main Execution Framework**. It moves beyond static roles to dynamic action. It features **Automatic Regex Routing**, **Actionable Decision Trees**, and **Chaining Patterns**.
 *   **Concept**: Executability & Automation (Action-centric)
-*   **Key Components**:
-    *   **Auto-Routing**: Regex-based dispatcher to select the right agent.
-    *   **Smart Chain**: `Discovery` → `Architect` → `Implementation` patterns.
-    *   **AGENTS_LIST.md**: The complete roster of 33 specialist agents.
+*   **Key Components**: Auto-Routing, Smart Chain, `AGENTS_LIST.md`.
 *   **Use Case**: **(Recommended for Vibe Coding)** Fast, efficient, and automated development cycles.
 
 ### 3. Cognitive Framework: Deep Thinking (`1003`)
@@ -43,41 +40,42 @@ This is the **Main Execution Framework**. It moves beyond static roles to dynami
 
 This layer upgrades the AI's cognitive process. It introduces **"Cognitive Agents"** capable of lateral thinking, problem reframing, and multi-dimensional analysis.
 *   **Concept**: Cognitive Process & Philosophy (Thought-centric)
-*   **Key Components**:
-    *   **Cognitive Layer**: Insight Explorer, Multidimensional Analyst, Problem Reframer.
-    *   **5-Step Thinking Process**: A mandatory protocol for solving complex problems.
+*   **Key Components**: Insight Explorer, Multidimensional Analyst, 5-Step Thinking Process.
 *   **Use Case**: Strategic planning, solving undefined problems, creative ideation, and R&D.
 
-### 4. Generative Orchestrator: Antigravity (`1004`)
-📂 **[1004_Skill_Agent_Systems_antigravity](./1004_Skill_Agent_Systems_antigravity)**
+### 4. Generative Orchestrator: Antigravity V4.0 (`1006`)
+📂 **[1006_Skill_Agent_Systems_antigravity_3](./1006_Skill_Agent_Systems_antigravity_3)**
 
 > *The Orchestrator.* Defining "How I Evolve".
 
-This layer implements the **Dynamic Chain System**. It is a proactive agent that perceives context using linguistic analysis (`translation-specialist`), plans its own workflows (DevChain, ThinkChain), and manages a dedicated memory system.
-*   **Concept**: Dynamic Orchestration & Proactivity (Evolution-centric)
-*   **Key Components**:
-    *   **Context-First Perception**: 4-Layer Linguistic Analysis (Lexical/Syntactic/Discourse/Pragmatic).
-    *   **Dynamic Chains**: Real-time assembly of Sequential/Parallel/Hybrid skills.
-    *   **Active Memory**: Automated `context_log.json` and checkpoints.
-*   **Use Case**: **(Next-Gen Standard)** Autonomous, end-to-end task resolution with self-correction.
+This is the **Current Gold Standard (V4.0)**. It implements the **Full-Stack Skills Orchestrator**. It creates a proactive agent that perceives context, plans its own workflows, and executes complex tasks using a massive library of specialized skills.
 
+*   **Concept**: Dynamic Orchestration & Proactivity (Evolution-centric)
+*   **Stats**: **36 Global Skills**, **9 Dynamic Chain Patterns**.
+*   **Key Components**:
+    *   **Context-First Perception**: `translation-specialist` for 4-Layer Linguistic Analysis.
+    *   **Dynamic Chains**: `DevChain`, `ThinkChain`, `DocChain`, `DesignChain`, `WebDevChain`, etc.
+    *   **Active Memory**: Automated `context_log.json` and checkpoints.
+*   **Use Case**: **(Standard)** Autonomous, end-to-end task resolution with self-correction.
 
 ---
 
-## 🧩 Skill Modules
+## 🧩 Antigravity V4.0 Skills & Modules
 
-Specialized capabilities designed to enhance the agent's toolbelt.
+The `1006` directory contains the full suite of **36 Global Skills** organized by category.
 
-### **[2001_Skill_skill-generator](./2001_Skill_skill-generator)**
-**"The Architect"**
-A meta-skill that generates other high-quality Claude Agent skills. It ensures standardization by following Anthropic's official best practices (Progressive Disclosure, YAML Frontmatter).
-*   **Use for**: Creating new, production-ready skills for your agents.
+| Category | Count | Key Skills |
+|:---:|:---:|---|
+| **Thinking & Analysis** | 11 | `insight-explorer`, `multidimensional-analyst`, `problem-reframer` |
+| **Development** | 8 | `system-architect`, `code-developer`, `web-artifacts-builder`, `mcp-builder` |
+| **Quality & Verification** | 3 | `quality-reviewer`, `code-reviewer` |
+| **Docs & Data** | 5 | `docx`, `pdf`, `pptx`, `xlsx`, `doc-coauthoring` |
+| **Design & Visual** | 5 | `canvas-design`, `brand-guidelines`, `algorithmic-art`, `slack-gif-creator` |
+| **Support** | 4 | `git-commit-helper`, `skill-creator`, `internal-comms` |
 
-### **[2001_Skill_translation-specialist](./2001_Skill_translation-specialist)**
-**"The Master Translator"**
-A context-aware translation agent based on academic theories (Nida, ISO 17100).
-*   **Key Feature**: **4-Layer Multi-dimensional Analysis** (Lexical → Syntactic → Discourse → Pragmatic).
-*   **Capability**: Automatically detects domain (Legal, Technical, Marketing) and adjusts translation strategy (Literal vs. Transcreation) without user prompts.
+> **Legacy Modules**:
+> *   `2001_Skill_*`: Legacy skill definitions (V1/V2).
+> *   `1004` & `1005`: Previous iterations of Antigravity (V3.0/V3.1).
 
 ---
 
@@ -98,26 +96,33 @@ A comprehensive framework designed to maximize the synergy between Human Intent 
 
 ### **[8001_Gemini_Evolution](./8001_Gemini_Evolution)**
 **"Project Evolution"**
-The roadmap and technical guide for porting Claude Code's sub-agent architecture into the **Gemini Antigravity** environment.
-*   **Contents**:
-    *   `GEMINI_SUBAGENTS_GUIDE.md`: Blueprint for grafting "Persona Artifacts" and "Task Boundaries" into Gemini.
-    *   Strategy for modularizing the `AGENTS_LIST` into executable workflow files.
+The roadmap and technical guide for the evolution of this repository. It documents the transition from basic Claude agents to the current Gemini Antigravity V4.0 system.
 
 ---
 
-## 🚀 How to Use
+## 🚀 How to Use (V4.0)
 
-1.  **Select Your Mode**:
-    *   For **Coding**: Use `1002_Agent_Systems_Engine`. Copy `CLAUDE.md` to your project root.
-    *   For **Planning**: Use `1003_Agent_Systems_Thinking`.
-2.  **Activate Agents**:
-    *   Reference `AGENTS_LIST.md` to find the right specialist (e.g., `103_security_guardian`).
-    *   Use the predefined keywords (regex) to automatically trigger the right agent.
-3.  **Deploy Skills**:
-    *   Copy folders from `2001_Skill_*` to your local agent configuration directory (e.g., `.claude/skills` or `.gemini/skills`).
+1.  **Initialize**:
+    *   Ensure the `1006` directory is present.
+    *   Read `1006_Skill_Agent_Systems_antigravity_3/GEMINI_V4.0.md` for the full system manual.
+2.  **Auto-Loading**:
+    *   The system automatically detects keywords in your prompt (e.g., "design", "translate", "refactor").
+    *   It proactively loads the relevant `SKILL.md` from `global_skills/`.
+3.  **Dynamic Chaining**:
+    *   For complex tasks, the system will construct a **Chain** (e.g., `DevChain` for coding, `DocChain` for documents).
+    *   Follow the automated **TODO** list provided by the agent.
 
 ---
 
 ## 📜 License
 
 See [LICENSE](./LICENSE).
+
+---
+
+## 🔮 Future Roadmap
+
+**Work in Progress**: This repository is a living implementation of the **AGI Roadmap**.
+The system has evolved from static roles (`1001`) to dynamic cognitive agents (`1006`). We are continuously expanding the **Thinking Layer** and **Generative Capabilities**.
+
+> *"The sky above the port was the color of television, tuned to a dead channel."* - *Neuromancer*
