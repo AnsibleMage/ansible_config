@@ -1,17 +1,17 @@
 ## 관련 문서
 
 **방법론 문서:**
-- [[../8000_ai_tdd_research|AI+TDD 연구 메인 인덱스]]
+- [[../TDD/ai_tdd_research|AI+TDD 연구 메인 인덱스]]
 - [[./CJ_AI_개발방법론_요약본|CJ_AI_개발방법론 요약본]] ⚡ - 빠른 참조 가이드 (20분)
-- [[./계층적_TDD_가이드|계층적 TDD 가이드]] - 프랙탈 TDD 패턴 심층 가이드
+- [[../doc/계층적_TDD_가이드|계층적 TDD 가이드]] - 프랙탈 TDD 패턴 심층 가이드
 
 **템플릿 (4-Layer):**
-- [[./templates/Product_PRD_템플릿|Product PRD 템플릿]] - 제품 레벨 (E2E Test)
-- [[./templates/Block_템플릿_통합|Block 템플릿 (통합)]] - Block + Feature + Task 통합 (실무용) ⭐
+- [[../templates/Product_PRD_템플릿|Product PRD 템플릿]] - 제품 레벨 (E2E Test)
+- [[../templates/Block_템플릿_통합|Block 템플릿 (통합)]] - Block + Feature + Task 통합 (실무용) ⭐
 
 **연구 분석:**
-- [[../06_분석결과/AI_TDD_종합_요약_보고서|AI+TDD 종합 요약 보고서]]
-- [[../06_분석결과/AI_TDD_다차원_분석_보고서|AI+TDD 다차원 분석 보고서]]
+- [[../TDD/06_분석결과/AI_TDD_종합_요약_보고서|AI+TDD 종합 요약 보고서]]
+- [[../TDD/06_분석결과/AI_TDD_다차원_분석_보고서|AI+TDD 다차원 분석 보고서]]
 
 ---
 
