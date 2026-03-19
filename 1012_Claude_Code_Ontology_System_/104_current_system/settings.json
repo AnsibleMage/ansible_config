@@ -1,0 +1,128 @@
+{
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(git branch:*)",
+      "Bash(git checkout:*)",
+      "Bash(git merge:*)",
+      "Bash(git stash:*)",
+      "Bash(git fetch:*)",
+      "Bash(git remote:*)",
+      "Bash(git show:*)",
+      "Bash(git rebase:*)",
+      "Bash(npm:*)",
+      "Bash(npx:*)",
+      "Bash(yarn:*)",
+      "Bash(pnpm:*)",
+      "Bash(bun:*)",
+      "Bash(bunx:*)",
+      "Bash(pip:*)",
+      "Bash(pip3:*)",
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Bash(pytest:*)",
+      "Bash(go:*)",
+      "Bash(cargo:*)",
+      "Bash(rustc:*)",
+      "Bash(ls:*)",
+      "Bash(pwd:*)",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(mv:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(wc:*)",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(tree:*)",
+      "Bash(which:*)",
+      "Bash(echo:*)",
+      "Bash(gh:*)",
+      "Bash(ansible:*)",
+      "Bash(ansible-playbook:*)",
+      "Bash(docker:*)",
+      "Bash(docker-compose:*)",
+      "Bash(make:*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(code:*)",
+      "Bash(open:*)",
+      "mcp__pencil"
+    ],
+    "deny": [
+      "Bash(rm -rf /*)",
+      "Bash(rm -rf ~/*)",
+      "Bash(sudo rm:*)",
+      "Bash(chmod 777:*)",
+      "Bash(*>/dev/sda*)",
+      "Bash(mkfs:*)",
+      "Bash(dd if=*of=/dev/*)",
+      "Bash(*:|:&*)",
+      "Bash(shutdown:*)",
+      "Bash(reboot:*)",
+      "Bash(kill -9 1:*)",
+      "Bash(killall:*)"
+    ],
+    "defaultMode": "plan"
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/changjaeyou/.claude/hooks/auto-analyze.sh"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if echo $CLAUDE_TOOL_INPUT | grep -qE '\\.env|\\.secret|credentials|password'; then echo '❌ 보안 파일 수정 차단됨' && exit 1; fi"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[✅ 파일 수정 완료]'"
+          },
+          {
+            "type": "command",
+            "command": "FILE=\"$CLAUDE_FILE_PATH\"; EXT=\"${FILE##*.}\"; case \"$EXT\" in js|jsx|ts|tsx|json|css|scss|html) if command -v prettier &> /dev/null; then prettier --write \"$FILE\" 2>/dev/null && echo '🎨 Prettier 포매팅 완료' || true; fi ;; py) if command -v black &> /dev/null; then black -q \"$FILE\" 2>/dev/null && echo '🐍 Black 포매팅 완료' || true; fi ;; go) if command -v gofmt &> /dev/null; then gofmt -w \"$FILE\" 2>/dev/null && echo '🔵 Go 포매팅 완료' || true; fi ;; rs) if command -v rustfmt &> /dev/null; then rustfmt \"$FILE\" 2>/dev/null && echo '🦀 Rust 포매팅 완료' || true; fi ;; rb) if command -v rubocop &> /dev/null; then rubocop -A \"$FILE\" 2>/dev/null && echo '💎 RuboCop 포매팅 완료' || true; fi ;; lua|luau) if command -v stylua &> /dev/null; then stylua \"$FILE\" 2>/dev/null && echo '🌙 StyLua 포매팅 완료' || true; fi ;; esac"
+          },
+          {
+            "type": "command",
+            "command": "if [ -d .git ]; then git status -s 2>/dev/null | head -5; fi"
+          }
+        ]
+      }
+    ],
+    "SessionStart": []
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "/Users/changjaeyou/.claude/statusline.sh",
+    "padding": 1
+  },
+  "defaultModel": "opus",
+  "effortLevel": "high"
+}

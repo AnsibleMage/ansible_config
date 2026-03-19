@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(git branch:*)",
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Bash(py:*)",
+      "Bash(dir:*)",
+      "Bash(type:*)",
+      "Bash(where:*)",
+      "Bash(powershell:*)",
+      "Bash(pwsh:*)",
+      "Bash(curl:*)",
+      "Bash(gh:*)",
+      "Bash(code:*)",
+      "Bash(start:*)"
+    ],
+    "deny": [
+      "Bash(del /s /q C:\\:*)",
+      "Bash(format:*)",
+      "Bash(rd /s /q:*)",
+      "Bash(shutdown:*)",
+      "Bash(taskkill /f /im:*)"
+    ]
+  },
+  "hooks": {},
+  "defaultModel": "sonnet"
+}

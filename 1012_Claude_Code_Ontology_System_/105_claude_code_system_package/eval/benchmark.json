@@ -1,0 +1,8 @@
+{
+  "version": "1.0.0",
+  "created": "2026-03-17",
+  "description": "스킬/에이전트 버전별 통과율 히스토리. 회귀 감지의 기준선.",
+  "targets": {},
+  "history": [],
+  "comparison": {}
+}

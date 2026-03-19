@@ -1,0 +1,332 @@
+{
+  "version": "1.0.0",
+  "created": "2026-03-17",
+  "description": "Phase 3 A3 평가 루프 초기 테스트 셋. 스킬/에이전트 성능 회귀 감지용.",
+  "test_cases": [
+    {
+      "id": "TC-001",
+      "name": "SQL 인젝션 감지",
+      "category": "security",
+      "input": {
+        "code_diff": "user_input = request.params['query']\ndb.execute(f'SELECT * FROM users WHERE name = {user_input}')"
+      },
+      "expected": {
+        "severity": "Critical",
+        "category": "security",
+        "detected": true
+      }
+    },
+    {
+      "id": "TC-002",
+      "name": "빈 배열 나누기",
+      "category": "edge-case",
+      "input": {
+        "code_diff": "const avg = sum / items.length;"
+      },
+      "expected": {
+        "severity": "Critical",
+        "category": "edge-case",
+        "detected": true
+      }
+    },
+    {
+      "id": "TC-003",
+      "name": "XSS 취약점",
+      "category": "security",
+      "input": {
+        "code_diff": "document.innerHTML = userInput;"
+      },
+      "expected": {
+        "severity": "Critical",
+        "category": "security",
+        "detected": true
+      }
+    },
+    {
+      "id": "TC-004",
+      "name": "널 포인터 역참조",
+      "category": "edge-case",
+      "input": {
+        "code_diff": "const name = user.profile.name;"
+      },
+      "expected": {
+        "severity": "Critical",
+        "category": "edge-case",
+        "detected": true
+      }
+    },
+    {
+      "id": "TC-005",
+      "name": "하드코딩된 비밀번호",
+      "category": "security",
+      "input": {
+        "code_diff": "const password = 'admin123';"
+      },
+      "expected": {
+        "severity": "Critical",
+        "category": "security",
+        "detected": true
+      }
+    },
+    {
+      "id": "TC-006",
+      "name": "타임아웃 미설정 API 호출",
+      "category": "logic",
+      "input": {
+        "code_diff": "const response = await fetch(externalApiUrl);"
+      },
+      "expected": {
+        "severity": "Warning",
+        "category": "logic",
+        "detected": true
+      }
+    },
+    {
+      "id": "TC-007",
+      "name": "매직 넘버",
+      "category": "logic",
+      "input": {
+        "code_diff": "if (retryCount > 3) { throw new Error('Too many retries'); }"
+      },
+      "expected": {
+        "severity": "Warning",
+        "category": "logic",
+        "detected": true
+      }
+    },
+    {
+      "id": "TC-008",
+      "name": "미사용 변수",
+      "category": "logic",
+      "input": {
+        "code_diff": "const unusedVar = calculateSomething();\nreturn result;"
+      },
+      "expected": {
+        "severity": "Warning",
+        "category": "logic",
+        "detected": true
+      }
+    },
+    {
+      "id": "TC-009",
+      "name": "경계값 오류 (off-by-one)",
+      "category": "edge-case",
+      "input": {
+        "code_diff": "for (let i = 0; i <= items.length; i++) { process(items[i]); }"
+      },
+      "expected": {
+        "severity": "Critical",
+        "category": "edge-case",
+        "detected": true
+      }
+    },
+    {
+      "id": "TC-010",
+      "name": "인증 우회 가능성",
+      "category": "security",
+      "input": {
+        "code_diff": "if (req.headers['x-admin'] === 'true') { grantAdmin(); }"
+      },
+      "expected": {
+        "severity": "Critical",
+        "category": "security",
+        "detected": true
+      }
+    },
+    {
+      "id": "TC-011",
+      "name": "환경변수 기본값 누락",
+      "category": "logic",
+      "input": {
+        "code_diff": "const dbUrl = process.env.DATABASE_URL;"
+      },
+      "expected": {
+        "severity": "Warning",
+        "category": "logic",
+        "detected": true
+      }
+    },
+    {
+      "id": "TC-012",
+      "name": "동시성 경합 조건",
+      "category": "edge-case",
+      "input": {
+        "code_diff": "let counter = 0;\nasync function increment() { counter = counter + 1; }"
+      },
+      "expected": {
+        "severity": "Warning",
+        "category": "edge-case",
+        "detected": true
+      }
+    },
+    {
+      "id": "TC-013",
+      "name": "에러 무시 (빈 catch)",
+      "category": "logic",
+      "input": {
+        "code_diff": "try { riskyOperation(); } catch (e) { }"
+      },
+      "expected": {
+        "severity": "Warning",
+        "category": "logic",
+        "detected": true
+      }
+    },
+    {
+      "id": "TC-014",
+      "name": "민감 데이터 로깅",
+      "category": "security",
+      "input": {
+        "code_diff": "console.log('User token:', user.accessToken);"
+      },
+      "expected": {
+        "severity": "Critical",
+        "category": "security",
+        "detected": true
+      }
+    },
+    {
+      "id": "TC-015",
+      "name": "무한 루프 가능성",
+      "category": "edge-case",
+      "input": {
+        "code_diff": "while (condition) { /* no break or condition update */ }"
+      },
+      "expected": {
+        "severity": "Critical",
+        "category": "edge-case",
+        "detected": true
+      }
+    },
+    {
+      "id": "TC-016",
+      "name": "타입 불일치 반환",
+      "category": "logic",
+      "input": {
+        "code_diff": "function getCount(): number { return '0'; }"
+      },
+      "expected": {
+        "severity": "Critical",
+        "category": "logic",
+        "detected": true
+      }
+    },
+    {
+      "id": "TC-017",
+      "name": "데드코드",
+      "category": "logic",
+      "input": {
+        "code_diff": "return result;\ncleanup();"
+      },
+      "expected": {
+        "severity": "Info",
+        "category": "logic",
+        "detected": true
+      }
+    },
+    {
+      "id": "TC-018",
+      "name": "대용량 데이터 미페이지네이션",
+      "category": "edge-case",
+      "input": {
+        "code_diff": "const allUsers = await db.users.findAll();"
+      },
+      "expected": {
+        "severity": "Warning",
+        "category": "edge-case",
+        "detected": true
+      }
+    },
+    {
+      "id": "TC-019",
+      "name": "CORS 미설정",
+      "category": "security",
+      "input": {
+        "code_diff": "app.use(cors({ origin: '*' }));"
+      },
+      "expected": {
+        "severity": "Warning",
+        "category": "security",
+        "detected": true
+      }
+    },
+    {
+      "id": "TC-020",
+      "name": "정수 오버플로",
+      "category": "edge-case",
+      "input": {
+        "code_diff": "const total = price * quantity;"
+      },
+      "expected": {
+        "severity": "Warning",
+        "category": "edge-case",
+        "detected": true
+      }
+    },
+    {
+      "id": "TC-021",
+      "name": "조건 분기 누락 (else 없음)",
+      "category": "logic",
+      "input": {
+        "code_diff": "if (status === 'active') { activate(); }\n// no else for inactive/pending"
+      },
+      "expected": {
+        "severity": "Warning",
+        "category": "logic",
+        "detected": true
+      }
+    },
+    {
+      "id": "TC-022",
+      "name": "파일 경로 주입",
+      "category": "security",
+      "input": {
+        "code_diff": "const file = fs.readFileSync('/uploads/' + req.params.filename);"
+      },
+      "expected": {
+        "severity": "Critical",
+        "category": "security",
+        "detected": true
+      }
+    },
+    {
+      "id": "TC-023",
+      "name": "메모리 누수 (이벤트 리스너)",
+      "category": "edge-case",
+      "input": {
+        "code_diff": "useEffect(() => { window.addEventListener('resize', handler); });"
+      },
+      "expected": {
+        "severity": "Warning",
+        "category": "edge-case",
+        "detected": true
+      }
+    },
+    {
+      "id": "TC-024",
+      "name": "안전한 코드 (오탐 방지)",
+      "category": "negative",
+      "input": {
+        "code_diff": "const sanitized = DOMPurify.sanitize(userInput);\nelement.innerHTML = sanitized;"
+      },
+      "expected": {
+        "severity": null,
+        "category": null,
+        "detected": false
+      }
+    },
+    {
+      "id": "TC-025",
+      "name": "정상 에러 처리 (오탐 방지)",
+      "category": "negative",
+      "input": {
+        "code_diff": "try { await fetchData(); } catch (err) { logger.error('Fetch failed', err); throw err; }"
+      },
+      "expected": {
+        "severity": null,
+        "category": null,
+        "detected": false
+      }
+    }
+  ]
+}
