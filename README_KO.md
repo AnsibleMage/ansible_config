@@ -10,12 +10,15 @@ Claude Code 설정 온톨로지 -- 에이전트, 스킬, 체인, 훅, 메모리 
 
 ## 주요 기능
 
-- **20개 이상의 전문 에이전트** -- 인지 에이전트(인사이트, 분석, 관점 전환), 역할 에이전트(아키텍트, 개발자, 리뷰어), 평가 에이전트(채점, 비교, 보안 리뷰)
-- **27개 스킬** -- 문서 처리(docx/pdf/pptx/xlsx), 디자인(캔버스, 테마, 브랜드), 웹 개발(프론트엔드, 테스트, 아티팩트), Rails 8 바이브코딩, 번역 등
+- **28개 전문 에이전트** -- 인지 에이전트(인사이트, 분석, 관점 전환), 역할 에이전트(아키텍트, 개발자, 리뷰어), 평가 에이전트(채점, 비교, 보안 리뷰), Obsidian 유틸리티 에이전트(8개)
+- **54개 이상 스킬** -- 문서 처리(docx/pdf/pptx/xlsx), 디자인(캔버스, 테마, 브랜드), 웹 개발(프론트엔드, 테스트, 아티팩트), Rails 8 바이브코딩, 번역 등
 - **10개 동적 체인 패턴** (A-J) -- SystemDesignChain, DevChain, ResearchChain, MetaThinkChain, HotfixChain, WebDevChain+, GameDevChain, DocChain+, RailsDevChain, AutomationChain
 - **4계층 프롬프트 분석기** -- Lexical, Syntactic, Discourse, Pragmatic 분석 + 오탐 방지 + 신뢰도 점수
 - **벡터 메모리 시스템** -- Qdrant 기반 의미적 메모리, 자동 인덱싱, 청크 벡터화, 코사인 유사도 리콜
-- **훅 시스템** -- UserPromptSubmit 자동 분석, PostToolUse 포매팅, PreToolUse 보안 검사, 메모리 자동 인덱싱
+- **훅 시스템** -- UserPromptSubmit 자동 분석 + 교정 감지, PostToolUse 포매팅 + 플랜 검토 트리거, PreToolUse 보안 검사, Stop 디버그 잔재 검출, 메모리 자동 인덱싱
+- **검증 루프** -- `{× MAX 3}` 자동 수정→재검증 (체인 6개 적용), MAX 초과 시 잔여 보고
+- **Pre-Mortem 게이트** -- "시니어 엔지니어라면 이 계획의 허점은?" Gate 2 승인 전 필수
+- **L1/L2 실수 캐시** -- lessons-learned.md (항상 로드, MAX 100) + 벡터 리콜 피드백 메모리
 - **에이전트 팀즈** -- Lead/Teammate 아키텍처 기반 병렬 실행, 복원력 프로토콜, 하이브리드 체인 통합
 
 ## 프로젝트 구조
@@ -73,6 +76,14 @@ ansible_config/
         |-- rules/         # 모듈화된 규칙 (오케스트레이션 + 메모리)
         |-- eval/          # 평가 프레임워크
         +-- workflow/      # research -> plan -> implement 템플릿
+|
++-- 1013_Claude_Code_Harness/         # 13단계: Boris 7팁 & 하네스 리서치
+    |-- 01_*                              # 7가지 베스트 프랙티스 (Boris + 해커톤 우승자)
+    |-- 02_*                              # Tip #2+#5 구현 가이드
+    |-- 03_*                              # Tip #7 훅 자동화 가이드
+    |-- 04_*                              # 자기평가 편향 분석 (이론 + 심층)
+    |-- 05_*                              # V5.1.0 vs 바닐라 5차원 분석
+    +-- 06_*                              # Tip #3 플랜모드 (Pre-Mortem + 독립 검토)
 ```
 
 ## 기술 스택
@@ -129,6 +140,7 @@ claude mcp add prompt-analyzer ~/.claude/mcp-env/bin/python3.12 -- ~/.claude/scr
 | V3.6 | 1009 | 복합 시스템 -- 24 에이전트, 17 스킬, 11 체인, MCP 분석기 |
 | V4.2.1 | 1010-1011 | 시스템 진화, 에이전트 팀즈 + 복원력 프로토콜 |
 | V5.1.0 | 1012 | 온톨로지 시스템, CLAUDE.md 모듈화, 평가 프레임워크 |
+| V5.2.0 | 1013 | Boris 7팁 적용, Pre-Mortem 게이트, 검증 루프, 편향 대응, Obsidian CLI 에이전트 |
 
 ## 라이선스
 

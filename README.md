@@ -10,12 +10,15 @@ The active production configuration lives in `~/.claude/` and is backed up / ver
 
 ## Key Features
 
-- **20+ Specialized Agents** -- cognitive agents (insight, analysis, reframing), role agents (architect, developer, reviewer), and evaluation agents (grader, comparator, security-reviewer)
-- **27 Skills** -- document processing (docx/pdf/pptx/xlsx), design (canvas, themes, brand), web development (frontend, testing, artifacts), Rails 8 vibe-coding, translation, and more
+- **28 Specialized Agents** -- cognitive agents (insight, analysis, reframing), role agents (architect, developer, reviewer), evaluation agents (grader, comparator, security-reviewer), and Obsidian utility agents (8)
+- **54+ Skills** -- document processing (docx/pdf/pptx/xlsx), design (canvas, themes, brand), web development (frontend, testing, artifacts), Rails 8 vibe-coding, translation, and more
 - **10 Dynamic Chain Patterns** (A-J) -- SystemDesignChain, DevChain, ResearchChain, MetaThinkChain, HotfixChain, WebDevChain+, GameDevChain, DocChain+, RailsDevChain, AutomationChain
 - **4-Layer Prompt Analyzer** -- Lexical, Syntactic, Discourse, Pragmatic analysis with false-positive prevention and confidence scoring
 - **Vector Memory System** -- Qdrant-backed semantic memory with auto-indexing, chunked vectorization, and cosine-similarity recall
-- **Hook System** -- UserPromptSubmit auto-analysis, PostToolUse formatting, PreToolUse security checks, memory auto-indexing
+- **Hook System** -- UserPromptSubmit auto-analysis + correction detection, PostToolUse formatting + plan review trigger, PreToolUse security checks, Stop debug residue detection, memory auto-indexing
+- **Verification Loop** -- `{× MAX 3}` retry with auto-fix on 6 chains, residual reporting on exhaustion
+- **Pre-Mortem Gate** -- "If a senior engineer reviewed this plan, what holes would they find?" forced before Gate 2 approval
+- **L1/L2 Mistake Cache** -- lessons-learned.md (always loaded, MAX 100) + vector-recalled feedback memory
 - **Agent Teams** -- parallel execution with Lead/Teammate architecture, resilience protocol, and hybrid chain integration
 
 ## Project Structure
@@ -73,6 +76,14 @@ ansible_config/
         |-- rules/         # Modularized rules (orchestration + memory)
         |-- eval/          # Evaluation framework
         +-- workflow/      # research -> plan -> implement templates
+|
++-- 1013_Claude_Code_Harness/         # Phase 13: Boris 7 tips & harness research
+    |-- 01_*                              # 7 best practices (Boris + hackathon winner)
+    |-- 02_*                              # Tip #2+#5 implementation guide
+    |-- 03_*                              # Tip #7 hook automation guide
+    |-- 04_*                              # Self-evaluation bias analysis (theory + deep)
+    |-- 05_*                              # V5.1.0 vs vanilla 5-dimensional analysis
+    +-- 06_*                              # Tip #3 plan mode (Pre-Mortem + independent review)
 ```
 
 ## Tech Stack
@@ -129,6 +140,7 @@ For detailed installation instructions, see:
 | V3.6 | 1009 | Compound system -- 24 agents, 17 skills, 11 chains, MCP analyzer |
 | V4.2.1 | 1010-1011 | System evolution, Agent Teams with resilience protocol |
 | V5.1.0 | 1012 | Ontology system, CLAUDE.md modularization, evaluation framework |
+| V5.2.0 | 1013 | Boris 7 tips, Pre-Mortem gate, verification loop, bias countermeasures, Obsidian CLI agents |
 
 ## License
 
